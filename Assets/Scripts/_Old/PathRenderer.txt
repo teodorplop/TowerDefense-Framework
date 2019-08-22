@@ -1,0 +1,31 @@
+﻿/*using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(LineRenderer)), ExecuteInEditMode]
+public class PathRenderer : MonoBehaviour {
+	private LineRenderer lineRenderer;
+
+	void Awake() {
+		lineRenderer = GetComponent<LineRenderer>();
+	}
+
+#if UNITY_EDITOR
+	private Vector3[] positions;
+	void Update() {
+		if (!Application.isPlaying) {
+			if (positions == null) positions = new Vector3[transform.childCount];
+			else if (positions.Length != transform.childCount) Array.Resize(ref positions, transform.childCount);
+
+			int i = 0;
+			foreach (Transform child in transform)
+				positions[i++] = child.localPosition;
+
+			lineRenderer.positionCount = positions.Length;
+			lineRenderer.SetPositions(positions);
+		}
+	}
+#endif
+}
+*/

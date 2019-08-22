@@ -1,0 +1,77 @@
+﻿/*using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[Serializable]
+public class Unit_Data {
+	private string id;
+	private string name;
+	private float speed;
+	private short health;
+	private short damage;
+	private string prefab;
+	private string sprite;
+
+	public string Id { get { return id; } }
+	public string Name { get { return name; } }
+	public float Speed { get { return speed; } }
+	public short Health { get { return health; } }
+	public short Damage { get { return damage; } }
+	public string Prefab { get { return prefab; } }
+	public string Sprite { get { return sprite; } }
+}
+
+public class UnitFactory {
+	private List<Unit_Data> data;
+	private List<Unit> prefabs;
+	private List<Sprite> sprites;
+
+	private Transform folder;
+
+	public UnitFactory(byte[] data) {
+		this.data = CsvSerializer.DeserializeList<Unit_Data>(data);
+
+		prefabs = new List<Unit>(this.data.Count);
+		sprites = new List<Sprite>(this.data.Count);
+		Unit prefab;
+		Sprite sprite;
+		for (int i = 0; i < this.data.Count; ++i) {
+			prefab = Resources.Load<Unit>("Prefabs/Units/" + this.data[i].Prefab);
+			sprite = Resources.Load<Sprite>("Graphics/Textures/" + this.data[i].Sprite);
+		}
+
+		folder = new GameObject("UnitFactory").transform;
+	}
+
+	public Unit_Data GetData(string id) {
+		int idx = data.FindIndex(obj => obj.Id == id);
+		if (idx == -1) {
+			Debug.LogError("Couldn't find data for unit " + id);
+			return null;
+		}
+
+		return data[idx];
+	}
+	public Unit GetUnit(string id) {
+		int idx = data.FindIndex(obj => obj.Id == id);
+		if (idx == -1) {
+			Debug.LogError("Couldn't find prefab for unit " + id);
+			return null;
+		}
+
+		Unit prefab = UnityEngine.Object.Instantiate(prefabs[idx], folder);
+		prefab.Inject(data[idx]);
+		return prefab;
+	}
+	public Sprite GetSprite(string id) {
+		int idx = data.FindIndex(obj => obj.Id == id);
+		if (idx == -1) {
+			Debug.LogError("Couldn't find sprite for unit " + id);
+			return null;
+		}
+
+		return sprites[idx];
+	}
+}
+*/

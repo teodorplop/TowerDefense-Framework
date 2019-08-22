@@ -1,0 +1,4 @@
+id,name,speed,health,damage,currency,prefab,ui
+0,Small Enemy,3,20,1,1,Small_Prefab,Small_Tex
+1,Medium Enemy,3,80,1,2,Medium_Prefab,Medium_Tex
+2,Large Enemy,2,160,3,4,Large_Prefab,Large_Tex

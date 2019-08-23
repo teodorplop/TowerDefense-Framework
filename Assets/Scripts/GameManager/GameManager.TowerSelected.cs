@@ -45,6 +45,8 @@ public partial class GameManager {
 		else {
 			player.SubtractCurrency(selectedTower.NextLevel.cost);
 			selectedTower.Upgrade();
+
+			towerRangeIndicator.Enable(selectedTower.transform.position, selectedTower.CurrentLevel.attackRange, selectedTower.CurrentLevel.auraRange);
 		}
 	}
 

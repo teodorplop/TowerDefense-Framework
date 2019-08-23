@@ -11,6 +11,7 @@ public partial class GameManager {
 	}
 	private IEnumerator PlaceTower_ExitState() {
 		towerSpotHighlighter.Disable();
+		towerRangeIndicator.Disable();
 		towerInHand = null;
 		yield return null;
 	}
@@ -34,6 +35,8 @@ public partial class GameManager {
 			towerSpotHighlighter.Enable(hitPoint, available ? Color.green : Color.red);
 			towerInHand.transform.position = hitPoint;
 
+			towerRangeIndicator.Enable(towerInHand.transform.position, towerInHand.CurrentLevel.attackRange, towerInHand.CurrentLevel.auraRange);
+
 			if (available && Input.GetMouseButtonDown(0)) {
 				player.SubtractCurrency(towerInHand.CurrentLevel.cost);
 				towerSpot.Occupy(grid, towerInHand);
@@ -43,6 +46,8 @@ public partial class GameManager {
 		} else {
 			towerInHand.transform.position = cameraController.ScreenToWorld(Input.mousePosition);
 			towerSpotHighlighter.Disable();
+
+			towerRangeIndicator.Enable(towerInHand.transform.position, towerInHand.CurrentLevel.attackRange, towerInHand.CurrentLevel.auraRange);
 		}
 	}
 }

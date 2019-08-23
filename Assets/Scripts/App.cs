@@ -58,7 +58,7 @@ public class App : MonoBehaviour {
 		officialLevels = new List<LevelFile>();
 
 		// TODO: Heavy, think of something else.
-		var levelAssets = Resources.LoadAll<TextAsset>("Levels");
+		var levelAssets = Resources.LoadAll<TextAsset>(officialLevelsDir);
 		foreach (var levelAsset in levelAssets) {
 			LevelFile level = ByteSerializer.Deserialize<LevelFile>(levelAsset.bytes);
 			level.fileName = levelAsset.name;

@@ -1,4 +1,4 @@
-# TowerDefense-Framework
+# Tower Defense Framework
 
 This is a framework that can be used to create / edit tower defense like maps.
 
